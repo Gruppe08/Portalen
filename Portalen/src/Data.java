@@ -13,7 +13,7 @@
 			bruger.add(new EventBruger("William Karberg", "123abc", events));
 			bruger.add(new EventBruger("Simon Ottosen", "123abc", events));
 			bruger.add(new EventBruger("Bianca Juul-Hansen", "123abc", events));
-			bruger.add(new EventBruger("Peter Wynn Vuiff", "123abc", events));
+			bruger.add(new EventBruger("Peter Wynn Vuiff12", "123abc", events));
 	}
 
 	public ArrayList<EventBruger> getBrugere() {
