@@ -52,8 +52,7 @@ public class Program {
 	}
 
 	public void printMenu() {
-		System.out.println(
-				"1) Se arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Slet arrangement\n" + "4) Log out\n");
+		System.out.println( "1) Se arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Slet arrangement\n" + "4) Log out\n");
 
 	}
 }
