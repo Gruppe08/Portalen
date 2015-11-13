@@ -32,18 +32,16 @@ public class EventKontrol {
 		System.out.println("Skriv kunstner: ");
 		String kunstner = input.next();
 
-		
-		
-		
 		System.out.println("Vælg lokale: ");
-		System.out.println("Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
+		System.out.println(
+				"Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
 		System.out.println("Tast 2 for Kabaret-scenen - 120 personer ved café-borde / 150 personer på stolerækker");
 		System.out.println("Tast 3 for Mødelokale 1 - 80 personer ved café-borde / 120 personer på stolerækker");
 		System.out.println("Tast 4 for Foyersalen (Portalens Biograf) - 80 personer på stolerækker");
+		
 		int lokale = input.nextInt();
 		String nylokale = null;
-		switch(lokale)
-		{
+		switch (lokale) {
 		case 1:
 			nylokale = "Portalens Teatersal";
 			break;
@@ -57,9 +55,7 @@ public class EventKontrol {
 			nylokale = "Foyersalen (Portalens Biograf)";
 			break;
 		}
-		
-		
-		
+
 		System.out.println("Skriv dato: ");
 		String dato = input.next();
 
