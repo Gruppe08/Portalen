@@ -1,15 +1,33 @@
 import java.util.ArrayList;
 
-public class Admin extends EventBruger {
-	
-	private String addBruger;
+public class Admin {
 
-	public Admin(String name, String password, ArrayList<Event> events){
-	super(name,password,events);
-	
-	this.addBruger = addBruger;
-}
-	public void print(){
-		System.out.println(addBruger);
+	protected String username;
+	protected int password;
+
+
+	public Admin(String username, int password) {
+		this.username = username;
+		this.password = password;
+		
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public int getPassword() {
+		return password;
+	}
+
+	public void setPassword(int password) {
+		this.password = password;
+
+	}
+
+	
 }

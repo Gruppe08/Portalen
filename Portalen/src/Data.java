@@ -1,27 +1,74 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 
-	import java.util.ArrayList;
+public class Data {
 
-	public class Data {
-		ArrayList<EventBruger> bruger;
+	private ArrayList<Admin> brugere;
+	private Admin currentBruger;
+	ArrayList<Event> events;
 
-		public void generate() {
+	public void generateUsers() {
 
-			ArrayList<Event> events = new ArrayList<Event>();
-			events.add(new Event("Pop Musik " , "Justin Bieber ", "Portalens Teatersal " , "2/2/2016"));
+		events = new ArrayList<Event>();
+		events.add(new Event("Pop", "Bieber", "SP12", "12/12/2016"));
+		
+		brugere = new ArrayList<Admin>();
+		brugere.add(new Bruger("a", 1, events));
+		brugere.add(new Bruger("William Karberg", 1234, events));
+		brugere.add(new Bruger("Simon Ottosen", 1234, events));
+		brugere.add(new Bruger("Bianca Juul-Hansen", 1234, events));
+		brugere.add(new Bruger("Peter Wynn Viuff", 1234, events));
+		brugere.add(new Admin("b", 2));
 
-			bruger = new ArrayList<EventBruger>();
-			bruger.add(new EventBruger("William Karberg", "123abc", events));
-			bruger.add(new EventBruger("Simon Ottosen", "123abc", events));
-			bruger.add(new EventBruger("Bianca Juul-Hansen", "123abc", events));
-			bruger.add(new EventBruger("Peter Wynn Vuiff", "123abc", events));
 	}
 
-	public ArrayList<EventBruger> getBruger() {
-			return bruger;
-		}
+	public boolean login() {
 
-		public void setBruger(ArrayList<EventBruger> bruger) {
-			this.bruger = bruger;
+		String username;
+		int password;
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Indtast brugernavn for at logge ind: ");
+		username = input.nextLine();
+		System.out.println("Skriv dit password: ");
+		password = input.nextInt();
+
+		for (Admin bruger : brugere) {
+			
+			if (bruger.getUsername().equals(username) && bruger.getPassword() == password) {
+				setCurrentBruger(bruger);
+				return true;
+			}
+		}
+		return false;
+	}
+		
+
+	public Admin getCurrentBruger() {
+		return currentBruger;
+	}
+
+	public void setCurrentBruger(Admin bruger) {
+		this.currentBruger = bruger;
+	}
+	
+	public ArrayList<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(ArrayList<Event> events) {
+		this.events = events;
+	}
+
+	public ArrayList<Admin> getBruger() {
+		return brugere;
+
+	}
+
+	public void setBruger(ArrayList<Admin> bruger) {
+		this.brugere = bruger;
+
 	}
 
 }

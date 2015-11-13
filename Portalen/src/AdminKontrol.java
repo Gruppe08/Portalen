@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
-public class UserKontrol {
+public class AdminKontrol {
 
-	Admin currentAdmin; 																//Change
+																	//Change
 	private Scanner input;
-
-	public UserKontrol(Scanner input) {													//Change
+	private Data db;
+	
+	public AdminKontrol(Scanner input, Data db) {													//Change
 		this.input = input;
+		this.db = db;
 	}
 
 	public void listOfBrugere() {
