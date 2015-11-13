@@ -56,7 +56,7 @@ public class EventKontrol {
 			break;
 		}
 
-		System.out.println("Skriv dato: ");
+		System.out.println("Skriv dato, i følgende form: DD/MM/YYYY: ");
 		String dato = input.next();
 
 		Event event = new Event(genre, kunstner, nylokale, dato);
