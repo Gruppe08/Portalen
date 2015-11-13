@@ -16,12 +16,12 @@
 			bruger.add(new EventBruger("Peter Wynn Vuiff", "123abc", events));
 	}
 
-	public ArrayList<EventBruger> getBrugere() {
+	public ArrayList<EventBruger> getBruger() {
 			return bruger;
 		}
 
-		public void setBrugere(ArrayList<EventBruger> brugere) {
-			this.bruger = brugere;
+		public void setBruger(ArrayList<EventBruger> bruger) {
+			this.bruger = bruger;
 	}
 
 }

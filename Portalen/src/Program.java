@@ -40,7 +40,7 @@ public class Program {
 	}
 
 	public boolean authUser() {
-		for (EventBruger bruger : db.getBrugere()) {
+		for (EventBruger bruger : db.getBruger()) {
 			ctrl.currentBruger = bruger;
 			return true;
 		}

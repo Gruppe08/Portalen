@@ -34,7 +34,7 @@ public class EventBruger {
 		return events;
 	}
 
-	public void setCars(ArrayList<Event> events) {
+	public void setEvents(ArrayList<Event> events) {
 		this.events = events;
 	}
 }
