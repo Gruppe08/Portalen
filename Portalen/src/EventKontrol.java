@@ -28,11 +28,32 @@ public class EventKontrol {
 		}
 	}
 	public void addEvent() {
-		System.out.println("Skriv genre: ");
-		input.nextLine();
-		String genre = input.nextLine();
+		System.out.println("Vælg genre: ");
+		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
+		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
+		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
+		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
+		
+		int genre = input.nextInt();
+		String nygenre = null;
+		switch (genre) {
+		case 1:
+			nygenre = "Musik";
+			break;
+		case 2:
+			nygenre = "Comedy";
+			break;
+		case 3:
+			nygenre = "Scenekunst";
+			break;
+		case 4:
+			nygenre = "Børneunderholdning";
+			break;
+		}
 		System.out.println("Skriv kunstner: ");
+		input.nextLine();
 		String kunstner = input.nextLine();
+		
 		System.out.println("Vælg lokale: ");
 		System.out.println("Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
 		System.out.println("Tast 2 for Kabaret-scenen - 120 personer ved café-borde / 150 personer på stolerækker");
@@ -56,11 +77,13 @@ public class EventKontrol {
 			break;
 		}
 		System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
+		
 		String dato = input.next();
 		int visitor = 0;
-		Event event = new Event(genre, kunstner, nylokale, dato, visitor);
+		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
 		db.getEvents().add(event);
 	}
+	
 	public void changeEvent() {
 		for (Event event : db.getEvents()) {
 			System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
@@ -68,10 +91,30 @@ public class EventKontrol {
 		}
 		System.out.print("Hvilket arrangement skal ændres? ");
 		db.getEvents().remove(input.nextInt());
-		System.out.println("Skriv den nye genre: ");
-		input.nextLine();
-		String genre = input.nextLine();
+		System.out.println("Vælg type optræden: ");
+		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
+		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
+		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
+		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
+		
+		int genre = input.nextInt();
+		String nygenre = null;
+		switch (genre) {
+		case 1:
+			nygenre = "Musik";
+			break;
+		case 2:
+			nygenre = "Comedy";
+			break;
+		case 3:
+			nygenre = "Scenekunst";
+			break;
+		case 4:
+			nygenre = "Børneunderholdning";
+			break;
+		}
 		System.out.println("Skriv den nye kunstner: ");
+		input.nextLine();
 		String kunstner = input.nextLine();
 		System.out.println("Vælg nyt lokale: ");
 		System.out.println("Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
@@ -98,7 +141,7 @@ public class EventKontrol {
 		System.out.println("Skriv den nye dato, i følgende format: DD/MM/YYYY: ");
 		String dato = input.next();
 		int visitor = 0;
-		Event event = new Event(genre, kunstner, nylokale, dato, visitor);
+		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
 		db.getEvents().add(event);
 	}
 
