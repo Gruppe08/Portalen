@@ -143,7 +143,7 @@ public class EventKontrol {
 		}
 		System.out.println("Skriv den nye dato, i følgende format: DD/MM/YYYY: ");
 		String dato = input.next();
-//		System.out.println("Eventet er nu oprettet\n");
+//		System.out.println("Eventet er nu oprettet\n");										//Endnu ikke løst
 //
 //		while (db.getEvents().equals(dato + nylokale)) {
 //			System.out.println("Denne er desværre allerede optaget, prøv igen");
@@ -155,7 +155,7 @@ public class EventKontrol {
 	}
 
 
-public void updateEventVisitor() {
+public void updateEventVisitor() {															//Endnu ikke løst
 	for (Event event : db.getEvents()) {
 		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
 				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato()+ ", " + event.getVisitor());
@@ -164,18 +164,7 @@ public void updateEventVisitor() {
 	//int visitor = input.nextInt();
 
 }
-public void searchEvent() {
-	for (Event event : db.getEvents()) {
-		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
-				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato()+ ", " + event.getVisitor());
-	db.getEvents().set(input.nextInt(), event);
-	}
-	
-	/*System.out.println("Indtast det ord du vil søge efter: ");
-	String search = input.next();
-	if (db.getEvents event contains(search)){*/
-}
-	public void searchEventGenre() {
+public void searchEvent() {																	//Endnu ikke løst
 	System.out.println("Indtast dit søgeord: ");
 	String search = input.next();
 	if (db.getEvents().contains(search)) {
@@ -183,11 +172,67 @@ public void searchEvent() {
 	}
 	else
 		System.out.println("Intet arrangement hedder dette\n____________");
-
-
-
 }
+	public void searchEventGenre() {														//Endnu ikke løst
+		System.out.println("Vælg genre: ");
+		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
+		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
+		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
+		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
+		
+		int valget = input.nextInt();
+		String valg = null;
+		switch (valget) {
+		case 1:
+			valg = "Musik";
+			break;
+		case 2:
+			valg = "Comedy";
+			break;
+		case 3:
+			valg = "Scenekunst";
+			break;
+		case 4:
+			valg = "Børneunderholdning";
+			break;
+		}
+		if (db.getEvents().contains(valg)) {
+			System.out.println("Udskriv alle arrangementer af denne type");
+		}
+		else
+			System.out.println("Der findes ingen arrangementer af denne type\n_________");
+}
+	public void visitorEvent() {															//Endnu ikke løst
+		System.out.println("Vælg genre: ");
+		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
+		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
+		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
+		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
+		
+		int valget = input.nextInt();
+		String valg = null;
+		switch (valget) {
+		case 1:
+			valg = "Musik";
+			break;
+		case 2:
+			valg = "Comedy";
+			break;
+		case 3:
+			valg = "Scenekunst";
+			break;
+		case 4:
+			valg = "Børneunderholdning";
+			break;
+		}
+		if (db.getEvents().contains(valg)) {
+			System.out.println("Find selve besøgstalet");
+		}
+		else
+			System.out.println("Der findes ingen arrangementer af denne type\n_________");
 
+		
+	}
 	public void deleteEvent() {
 		for (Event event : db.getEvents()) {
 			System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "

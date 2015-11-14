@@ -10,7 +10,14 @@ public class Data {
 	public void generateUsers() {
 
 		events = new ArrayList<Event>();
-		events.add(new Event("Pop", "Bieber", "SP12", "12/12/2016", 10));
+		events.add(new Event("Musik", "Justin Bieber", "Portalens Teatersal", "10/12/2015", 10));
+		events.add(new Event("Musik", "Adele", "Portalens Teatersal", "05/07/2020", 10));
+		events.add(new Event("Comedy", "Jonathan Spang", "Kabaret-scenen", "09/12/2026", 10));
+		events.add(new Event("Comedy", "Anden", "Kabaret-scenen", "08/03/2052", 10));
+		events.add(new Event("Scenekunst", "Nøddeknækkeren", "Mødelokale 1", "01/02/2005", 10));
+		events.add(new Event("Scenekunst", "Snedronningen", "Mødelokale 1", "05/06/2006", 10));
+		events.add(new Event("Børneunderholdning", "Trylleshow", "Foyersalen (Portalens Biograf)", "05/06/2053", 10));
+		events.add(new Event("Børneunderholdning", "William Karberg", "Foyersalen (Portalens Biograf)", "26/02/2013", 10));
 		
 		brugere = new ArrayList<Admin>();
 		brugere.add(new Bruger("a", 1, events));
