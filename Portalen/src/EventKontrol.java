@@ -8,7 +8,7 @@ public class EventKontrol {
 		this.input = input;
 		this.db = db;
 	}
-	public void listOfEvents() {
+	public void listOfEvents() {//Her er det muligt at få udskrevet alle events
 		if (db.getEvents().size() == 0) {
 			System.out.println("Der er ingen arrangementer\n____________");
 		} else {

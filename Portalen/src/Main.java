@@ -5,7 +5,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-		StartMenu program = new StartMenu();
+		StartMenu program = new StartMenu();	//Her starter vi StartMenu.java op
 		program.run();
 	}
 
