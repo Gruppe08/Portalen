@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class StartMenu {
 
-	Data db = new Data();
+	Data db = new Data(); //hej
 	Scanner input = new Scanner(System.in);
 	EventKontrol ctrlEvent = new EventKontrol(input, db);
 	private Scanner scanner;
