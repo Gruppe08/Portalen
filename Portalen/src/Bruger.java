@@ -1,8 +1,11 @@
 import java.util.ArrayList;
 
+//Her giver vi brugeren samme rettigheder som Admin dog har brugeren ikke ret til at at oprette eller slette andre brugere.
+
 public class Bruger extends Admin {
 
-	
+	//Her oprettes et ArrayList som indeholder de forskellige arrangementer, som der er -og bliver oprettet.
+
 	private ArrayList<Event> events;
 
 	public Bruger(String username, int password, ArrayList<Event> events) {
@@ -10,7 +13,8 @@ public class Bruger extends Admin {
 		this.events = events;
 	
 	}
-
+//Her oprettes getter og setter for username, password og arraylisten
+	
 	public String getUsername() {
 		return username;
 	}

@@ -1,6 +1,8 @@
 
 public class Event {
 
+ //Her definerer vi, genre, kunstner, lokale, dato og derudover hvor mange besøgende arrangementet har.
+
 	private String genre;
 	private String kunstner;
 	private String lokale;
@@ -17,6 +19,7 @@ public class Event {
 
 	}
 
+	//Her oprettes getter og setter for attributter
 	public String getGenre() {
 		return genre;
 	}
