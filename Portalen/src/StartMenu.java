@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class StartMenu {
 
-	Data db = new Data(); //hej
+	Data db = new Data(); 
 	Scanner input = new Scanner(System.in);
 	EventKontrol ctrlEvent = new EventKontrol(input, db);
 	private Scanner scanner;
 
 
-
+// Her opretter vi startmenuen 
 	public void run() {
 		int valg;
 		System.out.println("1) Vis alle arrangementer \n2) Login ");

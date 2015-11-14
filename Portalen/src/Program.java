@@ -6,6 +6,9 @@ public class Program {
 	Scanner input = new Scanner(System.in);
 	EventKontrol ctrlEvent = new EventKontrol(input, db);
 	AdminKontrol ctrlUser = new AdminKontrol(input, db);
+	
+	
+	//Her kører vi vores login, hvor hvis man er bruger vil man få vist brugermenuen og ellers får man vist adminmenuen
 
 	public void login() {
 		db.generateUsers();
@@ -23,6 +26,7 @@ public class Program {
 		}
 	}
 
+	//Her ses vores brugermenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
 	public void brugerMenu() {
 		do {
 			printBrugerMenu();
@@ -68,6 +72,8 @@ public class Program {
 
 	}
 	
+	
+	//Her ses vores adminmenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
 	public void adminMenu() {
 		do {
 			printAdminMenu();
@@ -102,12 +108,15 @@ public class Program {
 		db.setCurrentBruger(null);
 	}
 
+	//Her printes brugermenuen
 	public void printBrugerMenu() {
 		System.out.println(
 				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n" 
 				+ "6) Søg efter event\n" + "7) Se arrangementer i samme genre\n"+ "8) Besøgstal efter genre\n" + "9) Log ud\n");
 
 	}
+	
+	//Her printes adminmenuen
 	public void printAdminMenu() {
 		System.out.println(
 				"1) Vis alle brugere \n" + "2) Tilføj ny bruger\n" + "3) Slet bruger\n" + "4) Log ud\n");

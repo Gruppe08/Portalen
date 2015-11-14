@@ -11,7 +11,7 @@ public class Admin {
 		this.password = password;
 		
 	}
-
+	//opretter getter og setter for username og password
 	public String getUsername() {
 		return username;
 	}
