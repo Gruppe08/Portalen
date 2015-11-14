@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
 public class EventKontrol {
 	
 	private Scanner input;
@@ -153,6 +156,22 @@ public void updateEventVisitor() {
 	db.getEvents().set(input.nextInt(), event);
 	}
 	//int visitor = input.nextInt();
+
+}
+public void searchEvent() {
+	for (Event event : db.getEvents()) {
+		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
+				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato()+ ", " + event.getVisitor());
+	db.getEvents().set(input.nextInt(), event);
+	}
+	
+	/*System.out.println("Indtast det ord du vil søge efter: ");
+	String search = input.next();
+	if (db.getEvents event contains(search)){*/
+	
+
+
+
 
 }
 

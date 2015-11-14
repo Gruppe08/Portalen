@@ -16,8 +16,8 @@ public class StartMenu {
 		valg = input.nextInt();
 		
 		if (valg == 1){
-			Program program = new Program();
-			program.kunde();
+			System.out.println("Nope");
+
 		}
 
 		

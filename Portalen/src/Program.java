@@ -45,6 +45,9 @@ public class Program {
 				ctrlEvent.updateEventVisitor();
 				break;
 			case 6:
+				ctrlEvent.searchEvent();
+				break;
+			case 7:
 				logOut();
 				break;
 
@@ -56,9 +59,6 @@ public class Program {
 		StartMenu program = new StartMenu();
 		program.run();
 		System.out.println("Du er nu logget ud");
-
-	}
-	public void kunde() {
 
 	}
 	
@@ -99,7 +99,7 @@ public class Program {
 
 	public void printBrugerMenu() {
 		System.out.println(
-				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n"+ "6) Log ud\n");
+				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n" + "6) Søg efter event\n" + "7) Log ud\n");
 
 	}
 	public void printAdminMenu() {
