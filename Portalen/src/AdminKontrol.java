@@ -15,7 +15,7 @@ public class AdminKontrol {
 			System.out.println("Der er ingen brugere");
 		} else {
 			System.out.println("Her er alle eksisterende brugere: ");
-			for (Admin bruger : db.getBruger()) {				//Admin skal muligvis ændres til brugere +Linje38
+			for (Admin bruger : db.getBruger()) {
 				System.out.println("Brugernavn: " + bruger.getUsername() + " Password: " + bruger.getPassword());
 
 			}

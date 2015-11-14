@@ -12,7 +12,7 @@ public class StartMenu {
 	public void run() {
 		int valg;
 		Scanner input = new Scanner(System.in);
-		System.out.println("1) Vis alle arrangementer \n2) Login som bruger eller admin");
+		System.out.println("1) Vis alle arrangementer \n2) Login ");
 		valg = input.nextInt();
 		
 		if (valg == 1){

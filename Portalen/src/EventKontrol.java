@@ -29,9 +29,10 @@ public class EventKontrol {
 	}
 	public void addEvent() {
 		System.out.println("Skriv genre: ");
-		String genre = input.next();
+		input.nextLine();
+		String genre = input.nextLine();
 		System.out.println("Skriv kunstner: ");
-		String kunstner = input.next();
+		String kunstner = input.nextLine();
 		System.out.println("Vælg lokale: ");
 		System.out.println("Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
 		System.out.println("Tast 2 for Kabaret-scenen - 120 personer ved café-borde / 150 personer på stolerækker");
