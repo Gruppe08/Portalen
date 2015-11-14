@@ -1,15 +1,8 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.HashSet;
 public class EventKontrol {
 	
 	private Scanner input;
 	private Data db; 
-	
-//	public void run() {
-//			System.out.println("Der er ingen arrangementer");
-//	}
 	
 	public EventKontrol(Scanner input, Data db) {
 		this.input = input;
@@ -143,12 +136,12 @@ public class EventKontrol {
 		}
 		System.out.println("Skriv den nye dato, i følgende format: DD/MM/YYYY: ");
 		String dato = input.next();
-//		System.out.println("Eventet er nu oprettet\n");										//Endnu ikke løst
-//
-//		while (db.getEvents().equals(dato + nylokale)) {
-//			System.out.println("Denne er desværre allerede optaget, prøv igen");
-//		}
-//		
+		System.out.println("Eventet er nu oprettet\n");										//Endnu ikke løst
+
+		while (db.getEvents().equals(dato + nylokale)) {
+			System.out.println("Denne er desværre allerede optaget, prøv igen");
+		}
+		
 		int visitor = 0;
 		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
 		db.getEvents().add(event);

@@ -6,6 +6,7 @@ public class Data {
 	private ArrayList<Admin> brugere;
 	private Admin currentBruger;
 	ArrayList<Event> events;
+	private Scanner input;
 
 	public void generateUsers() {
 
@@ -34,7 +35,7 @@ public class Data {
 		String username;
 		int password;
 
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 
 		System.out.println("Indtast brugernavn for at logge ind: ");
 		username = input.nextLine();

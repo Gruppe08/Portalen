@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StartMenu {
@@ -6,14 +5,15 @@ public class StartMenu {
 	Data db = new Data();
 	Scanner input = new Scanner(System.in);
 	EventKontrol ctrlEvent = new EventKontrol(input, db);
+	private Scanner scanner;
 
 
 
 	public void run() {
 		int valg;
-		Scanner input = new Scanner(System.in);
 		System.out.println("1) Vis alle arrangementer \n2) Login ");
-		valg = input.nextInt();
+		scanner = new Scanner(System.in);
+		valg = scanner.nextInt();
 		
 		if (valg == 1){
 			System.out.println("Nope");
