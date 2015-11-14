@@ -107,13 +107,8 @@ public void updateEventVisitor() {
 	for (Event event : db.getEvents()) {
 		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
 				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato()+ ", " + event.getVisitor());
+	db.getEvents().set(input.nextInt(), event);
 	}
-	System.out.print("Hvilket arrangement skal ændres? ");
-	db.getEvents();
-	System.out.print("Skriv det nye besøgstal for arrangementet ");
-
-
-	
 	//int visitor = input.nextInt();
 
 }
