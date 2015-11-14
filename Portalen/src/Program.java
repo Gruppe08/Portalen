@@ -76,8 +76,8 @@ public class Program {
 			}
 
 		} while (db.getCurrentBruger() != null);
-		input.close();
-		System.out.println("Du er nu logget ud");
+		System.out.println("Du er nu logget ud\n");
+
 
 	}
 

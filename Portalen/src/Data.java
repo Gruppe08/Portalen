@@ -41,7 +41,11 @@ public class Data {
 				return true;
 			}
 		}
+		System.out.println("Forkert brugernavn eller kode, prøv igen\n");
+		StartMenu program = new StartMenu();
+		program.run();
 		return false;
+
 	}
 		
 

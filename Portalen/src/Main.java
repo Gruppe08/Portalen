@@ -5,7 +5,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-		Program program = new Program();
+		StartMenu program = new StartMenu();
 		program.run();
 	}
 
