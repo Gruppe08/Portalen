@@ -36,12 +36,15 @@ public class Program {
 				ctrlEvent.addEvent();
 				break;
 			case 3:
-				ctrlEvent.deleteEvent();
+				ctrlEvent.changeEvent();
 				break;
 			case 4:
-				ctrlEvent.updateEventVisitor();
+				ctrlEvent.deleteEvent();
 				break;
 			case 5:
+				ctrlEvent.updateEventVisitor();
+				break;
+			case 6:
 				logOut();
 				break;
 
@@ -96,7 +99,7 @@ public class Program {
 
 	public void printBrugerMenu() {
 		System.out.println(
-				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Slet arrangement\n" + "4) Opdater besøgstal\n"+ "5) Log ud\n");
+				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n"+ "6) Log ud\n");
 
 	}
 	public void printAdminMenu() {
