@@ -8,10 +8,13 @@ public class EventKontrol {
 		this.input = input;
 		this.db = db;
 	}
-	public void listOfEvents() {//Her er det muligt at få udskrevet alle events
-		if (db.getEvents().size() == 0) {
+	//Her er det muligt at få udskrevet alle events
+	public void listOfEvents() {								
+	//Hvis den ikke har arrangementer, så udskriv nedenstående besked
+		if (db.getEvents().size() == 0) {						
 			System.out.println("Der er ingen arrangementer\n____________");
-		} else {
+		} else {												
+	//Hvis der findes arrangenemter, så udskriv dem
 			System.out.println("Her er alle eksisterende arrangementer: ");
 			for (Event event : db.getEvents()) {
 				System.out.println("Genre: " + event.getGenre());
@@ -19,17 +22,26 @@ public class EventKontrol {
 				System.out.println("Lokale: " + event.getLokale());
 				System.out.println("Dato: " + event.getDato());
 				System.out.println("Besøgende: " + event.getVisitor());
+				
+				event.setVisitor(20);
+				db.getEvents().remove(input.nextInt());
+				db.getEvents().remove(input.nextInt());
+				Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
+				db.getEvents().add(event);
+
+
 				System.out.println("___________________________");
 			}
 		}
 	}
-	public void addEvent() {
+	//Et nyt afsnit til at tilføje events
+	public void addEvent() {	
 		System.out.println("Vælg genre: ");
 		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
 		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
 		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
-		
+		//Her har vi indsat en switch som bliver brugt til at vælge hvilken genre det skal være
 		int genre = input.nextInt();
 		String nygenre = null;
 		switch (genre) {
@@ -55,7 +67,7 @@ public class EventKontrol {
 		System.out.println("Tast 2 for Kabaret-scenen - 120 personer ved café-borde / 150 personer på stolerækker");
 		System.out.println("Tast 3 for Mødelokale 1 - 80 personer ved café-borde / 120 personer på stolerækker");
 		System.out.println("Tast 4 for Foyersalen (Portalens Biograf) - 80 personer på stolerækker");
-		
+		//Her har vi indsat endnu en switch som denne gang bliver den brugt til at vælge lokale
 		int lokale = input.nextInt();
 		String nylokale = null;
 		switch (lokale) {
@@ -75,18 +87,21 @@ public class EventKontrol {
 		System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
 		
 		String dato = input.next();
+		//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
 		int visitor = 0;
+		//Her sætter vi så et helt nyt event hvor vi opdaterer alle de krav vi har sat i Event.java
 		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
 		db.getEvents().add(event);
 	}
-	
-	public void changeEvent() {
+	//Dette afsnit ændrer eventet
+	public void changeEvent() {	
 		for (Event event : db.getEvents()) {
 			System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
 					+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato() + ", " + event.getVisitor());
 		}
 		System.out.print("Hvilket arrangement skal ændres? ");
-		db.getEvents().remove(input.nextInt());
+		//Her vælger vi at slette det gamle event og bede brugeren om at indtaste de nye information som skal erstattes
+		db.getEvents().remove(input.nextInt()); 
 		System.out.println("Vælg type optræden: ");
 		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
 		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
