@@ -48,6 +48,9 @@ public class Program {
 				ctrlEvent.searchEvent();
 				break;
 			case 7:
+				ctrlEvent.searchEventGenre();
+				break;
+			case 8:
 				logOut();
 				break;
 
@@ -77,7 +80,6 @@ public class Program {
 			case 3:
 				ctrlUser.deleteBruger();
 				break;
-				
 			case 4:
 				logOut();
 				break;
@@ -99,7 +101,7 @@ public class Program {
 
 	public void printBrugerMenu() {
 		System.out.println(
-				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n" + "6) Søg efter event\n" + "7) Log ud\n");
+				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n" + "6) Søg efter event\n"+ "7) Prøv lykken\n" + "8) Log ud\n");
 
 	}
 	public void printAdminMenu() {

@@ -17,7 +17,7 @@ public class EventKontrol {
 	}
 	public void listOfEvents() {
 		if (db.getEvents().size() == 0) {
-			System.out.println("Der er ingen arrangementer");
+			System.out.println("Der er ingen arrangementer\n____________");
 		} else {
 			System.out.println("Her er alle eksisterende arrangementer: ");
 			for (Event event : db.getEvents()) {
@@ -143,6 +143,12 @@ public class EventKontrol {
 		}
 		System.out.println("Skriv den nye dato, i følgende format: DD/MM/YYYY: ");
 		String dato = input.next();
+//		System.out.println("Eventet er nu oprettet\n");
+//
+//		while (db.getEvents().equals(dato + nylokale)) {
+//			System.out.println("Denne er desværre allerede optaget, prøv igen");
+//		}
+//		
 		int visitor = 0;
 		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
 		db.getEvents().add(event);
@@ -168,8 +174,15 @@ public void searchEvent() {
 	/*System.out.println("Indtast det ord du vil søge efter: ");
 	String search = input.next();
 	if (db.getEvents event contains(search)){*/
-	
-
+}
+	public void searchEventGenre() {
+	System.out.println("Indtast dit søgeord: ");
+	String search = input.next();
+	if (db.getEvents().contains(search)) {
+		System.out.println("Udskriv her alle arrangementerne");
+	}
+	else
+		System.out.println("Intet arrangement hedder dette\n____________");
 
 
 
