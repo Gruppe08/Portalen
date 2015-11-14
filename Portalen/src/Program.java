@@ -7,7 +7,7 @@ public class Program {
 	EventKontrol ctrlEvent = new EventKontrol(input, db);
 	AdminKontrol ctrlUser = new AdminKontrol(input, db);
 
-	public void run() {
+	public void login() {
 		db.generateUsers();
 
 		if (db.login()) {
@@ -39,6 +39,9 @@ public class Program {
 				ctrlEvent.deleteEvent();
 				break;
 			case 4:
+				ctrlEvent.updateEventVisitor();
+				break;
+			case 5:
 				logOut();
 				break;
 
@@ -47,8 +50,12 @@ public class Program {
 			}
 
 		} while (db.getCurrentBruger() != null);
-		input.close();
+		StartMenu program = new StartMenu();
+		program.run();
 		System.out.println("Du er nu logget ud");
+
+	}
+	public void kunde() {
 
 	}
 	
@@ -67,6 +74,7 @@ public class Program {
 			case 3:
 				ctrlUser.deleteBruger();
 				break;
+				
 			case 4:
 				logOut();
 				break;
@@ -75,9 +83,10 @@ public class Program {
 				break;
 			}
 
-		} while (db.getCurrentBruger() != null);
-		System.out.println("Du er nu logget ud\n");
-
+	} while (db.getCurrentBruger() != null);
+		StartMenu program = new StartMenu();
+		program.run();
+	System.out.println("Du er nu logget ud\n");
 
 	}
 
@@ -87,7 +96,7 @@ public class Program {
 
 	public void printBrugerMenu() {
 		System.out.println(
-				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Slet arrangement\n" + "4) Log ud\n");
+				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Slet arrangement\n" + "4) Opdater besøgstal\n"+ "5) Log ud\n");
 
 	}
 	public void printAdminMenu() {

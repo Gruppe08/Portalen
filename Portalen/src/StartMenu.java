@@ -16,13 +16,15 @@ public class StartMenu {
 		valg = input.nextInt();
 		
 		if (valg == 1){
-			ctrlEvent.listOfEvents();
-
+			Program program = new Program();
+			program.kunde();
 		}
+
+		
 		
 		if (valg == 2) {
 			Program program = new Program();
-			program.run();
+			program.login();
 			
 		}
 		else{

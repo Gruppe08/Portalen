@@ -4,6 +4,10 @@ public class EventKontrol {
 	private Scanner input;
 	private Data db; 
 	
+//	public void run() {
+//			System.out.println("Der er ingen arrangementer");
+//	}
+	
 	public EventKontrol(Scanner input, Data db) {
 		this.input = input;
 		this.db = db;
@@ -18,6 +22,7 @@ public class EventKontrol {
 				System.out.println("Kunstner: " + event.getKunstner());
 				System.out.println("Lokale: " + event.getLokale());
 				System.out.println("Dato: " + event.getDato());
+				System.out.println("Besøgende: " + event.getVisitor());
 				System.out.println("___________________________");
 			}
 		}
@@ -49,15 +54,33 @@ public class EventKontrol {
 			nylokale = "Foyersalen (Portalens Biograf)";
 			break;
 		}
-		System.out.println("Skriv dato: ");
+		System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
 		String dato = input.next();
-		Event event = new Event(genre, kunstner, nylokale, dato);
+		int visitor = 0;
+		Event event = new Event(genre, kunstner, nylokale, dato, visitor);
 		db.getEvents().add(event);
 	}
+
+
+public void updateEventVisitor() {
+	for (Event event : db.getEvents()) {
+		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
+				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato()+ ", " + event.getVisitor());
+	}
+	System.out.print("Hvilket arrangement skal ændres? ");
+	db.getEvents();
+	System.out.print("Skriv det nye besøgstal for arrangementet ");
+
+
+	
+	//int visitor = input.nextInt();
+
+}
+
 	public void deleteEvent() {
 		for (Event event : db.getEvents()) {
 			System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
-					+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato());
+					+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato() + ", " + event.getVisitor());
 		}
 		System.out.print("Hvilket arrangement skal slettes? ");
 		db.getEvents().remove(input.nextInt());

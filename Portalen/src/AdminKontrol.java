@@ -1,48 +1,43 @@
+import java.util.ArrayList;
 import java.util.Scanner;
-
 public class AdminKontrol {
-
-																	//Change
-	private Scanner input;
-	private Data db;
 	
-	public AdminKontrol(Scanner input, Data db) {													//Change
+	private Scanner input;
+	private Data db; 
+	
+
+	public AdminKontrol(Scanner input, Data db) {
 		this.input = input;
 		this.db = db;
 	}
-
 	public void listOfBrugere() {
-		if (currentAdmin.getBruger().size() == 0) {										//Change
+		if (db.getBruger().size() == 0) {
 			System.out.println("Der er ingen brugere");
 		} else {
 			System.out.println("Her er alle eksisterende brugere: ");
+			for (Admin bruger : db.getBruger()) {				//Admin skal muligvis ændres til brugere +Linje38
+				System.out.println("Brugernavn: " + bruger.getUsername() + " Password: " + bruger.getPassword());
 
-			for (Bruger bruger : currentAdmin.getBruger()) {
-				System.out.println("Brugernavn: " + bruger.getBruger + "Password: " + bruger.getPassword());
-				System.out.println("___________________________");
 			}
+			
 		}
-	}
-
+		}
 	public void addBruger() {
-		System.out.println("Skriv brugernavn: ");
-		String brugernavn = input.next();
+		System.out.println("Brugernavn: ");
+		String username = input.next();
+		System.out.println("Password: ");
+		int password = input.nextInt();
+		Bruger bruger = new Bruger(username, password, null);
+		db.getBruger().add(bruger);
 
-		System.out.println("Skriv password: ");
-		String password = input.next();
 		
-		Bruger bruger = new Bruger(brugernavn, password);
-		currentAdmin.getBruger().add(bruger);
-
 	}
-
 	public void deleteBruger() {
-		for (Bruger bruger : currentAdmin.getBruger()) {
-			System.out.println(currentAdmin.getBruger().indexOf(bruger) + "brugernavn: " + bruger.getBruger + "Password: " + bruger.getPassword);
-
+		for (Admin bruger : db.getBruger()) {
+			System.out.println(db.getBruger().indexOf(bruger) + ": " + bruger.getUsername() + ", "
+					+ bruger.getPassword());
 		}
 		System.out.print("Hvilken bruger skal slettes? ");
-		currentAdmin.getBruger().remove(input.nextInt());
+		db.getBruger().remove(input.nextInt());
 
-	}
-}
+}}

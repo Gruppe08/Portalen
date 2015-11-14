@@ -10,7 +10,7 @@ public class Data {
 	public void generateUsers() {
 
 		events = new ArrayList<Event>();
-		events.add(new Event("Pop", "Bieber", "SP12", "12/12/2016"));
+		events.add(new Event("Pop", "Bieber", "SP12", "12/12/2016", 10));
 		
 		brugere = new ArrayList<Admin>();
 		brugere.add(new Bruger("a", 1, events));

@@ -2,9 +2,10 @@ import java.util.ArrayList;
 
 public class Admin {
 
+	
+	
 	protected String username;
 	protected int password;
-
 
 	public Admin(String username, int password) {
 		this.username = username;
