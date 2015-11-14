@@ -19,7 +19,6 @@ public class StartMenu {
 			System.out.println("Nope");
 
 		}
-
 		
 		
 		if (valg == 2) {

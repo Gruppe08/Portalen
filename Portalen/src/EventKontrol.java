@@ -22,13 +22,7 @@ public class EventKontrol {
 				System.out.println("Lokale: " + event.getLokale());
 				System.out.println("Dato: " + event.getDato());
 				System.out.println("Besøgende: " + event.getVisitor());
-				
-				event.setVisitor(20);
-				db.getEvents().remove(input.nextInt());
-				db.getEvents().remove(input.nextInt());
-				Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
-				db.getEvents().add(event);
-
+			
 
 				System.out.println("___________________________");
 			}
@@ -166,8 +160,16 @@ public class EventKontrol {
 public void updateEventVisitor() {															//Endnu ikke løst
 	for (Event event : db.getEvents()) {
 		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
-				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato()+ ", " + event.getVisitor());
-	db.getEvents().set(input.nextInt(), event);
+				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato() + ", " + event.getVisitor());
+		
+		db.getEvents().remove(input.nextInt()); 
+
+	event.setVisitor(20);
+//	db.getEvents().setVisitor(20)(input.nextInt()); //Bedste løsning!
+//	db.getEvents().set(visitor());
+//	Visitor visitor = new Event(visitor);
+//	db.getEvents().add(event);
+
 	}
 	//int visitor = input.nextInt();
 
