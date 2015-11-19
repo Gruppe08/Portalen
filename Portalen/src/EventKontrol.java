@@ -36,19 +36,19 @@ public class EventKontrol {
 		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
 		//Her har vi indsat en switch som bliver brugt til at vælge hvilken genre det skal være
-		int genre = input.nextInt();
+		String genre = input.next();
 		String nygenre = null;
 		switch (genre) {
-		case 1:
+		case "1":
 			nygenre = "Musik";
 			break;
-		case 2:
+		case "2":
 			nygenre = "Comedy";
 			break;
-		case 3:
+		case "3":
 			nygenre = "Scenekunst";
 			break;
-		case 4:
+		case "4":
 			nygenre = "Børneunderholdning";
 			break;
 		}
@@ -62,19 +62,19 @@ public class EventKontrol {
 		System.out.println("Tast 3 for Mødelokale 1 - 80 personer ved café-borde / 120 personer på stolerækker");
 		System.out.println("Tast 4 for Foyersalen (Portalens Biograf) - 80 personer på stolerækker");
 		//Her har vi indsat endnu en switch som denne gang bliver den brugt til at vælge lokale
-		int lokale = input.nextInt();
+		String lokale = input.next();
 		String nylokale = null;
 		switch (lokale) {
-		case 1:
+		case "1":
 			nylokale = "Portalens Teatersal";
 			break;
-		case 2:
+		case "2":
 			nylokale = "Kabaret-scenen";
 			break;
-		case 3:
+		case "3":
 			nylokale = "Mødelokale 1";
 			break;
-		case 4:
+		case "4":
 			nylokale = "Foyersalen (Portalens Biograf)";
 			break;
 		}
@@ -102,19 +102,19 @@ public class EventKontrol {
 		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
 		
-		int genre = input.nextInt();
+		String genre = input.next();
 		String nygenre = null;
 		switch (genre) {
-		case 1:
+		case "1":
 			nygenre = "Musik";
 			break;
-		case 2:
+		case "2":
 			nygenre = "Comedy";
 			break;
-		case 3:
+		case "3":
 			nygenre = "Scenekunst";
 			break;
-		case 4:
+		case "4":
 			nygenre = "Børneunderholdning";
 			break;
 		}
@@ -127,19 +127,19 @@ public class EventKontrol {
 		System.out.println("Tast 3 for Mødelokale 1 - 80 personer ved café-borde / 120 personer på stolerækker");
 		System.out.println("Tast 4 for Foyersalen (Portalens Biograf) - 80 personer på stolerækker");
 		
-		int lokale = input.nextInt();
+		String lokale = input.next();
 		String nylokale = null;
 		switch (lokale) {
-		case 1:
+		case "1":
 			nylokale = "Portalens Teatersal";
 			break;
-		case 2:
+		case "2":
 			nylokale = "Kabaret-scenen";
 			break;
-		case 3:
+		case "3":
 			nylokale = "Mødelokale 1";
 			break;
-		case 4:
+		case "4":
 			nylokale = "Foyersalen (Portalens Biograf)";
 			break;
 		}
@@ -190,19 +190,19 @@ public void searchEvent() {																	//Endnu ikke løst
 		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
 		
-		int valget = input.nextInt();
+		String valget = input.next();
 		String valg = null;
 		switch (valget) {
-		case 1:
+		case "1":
 			valg = "Musik";
 			break;
-		case 2:
+		case "2":
 			valg = "Comedy";
 			break;
-		case 3:
+		case "3":
 			valg = "Scenekunst";
 			break;
-		case 4:
+		case "4":
 			valg = "Børneunderholdning";
 			break;
 		}
@@ -219,19 +219,19 @@ public void searchEvent() {																	//Endnu ikke løst
 		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
 		
-		int valget = input.nextInt();
+		String valget = input.next();
 		String valg = null;
 		switch (valget) {
-		case 1:
+		case "1":
 			valg = "Musik";
 			break;
-		case 2:
+		case "2":
 			valg = "Comedy";
 			break;
-		case 3:
+		case "3":
 			valg = "Scenekunst";
 			break;
-		case 4:
+		case "4":
 			valg = "Børneunderholdning";
 			break;
 		}
