@@ -37,7 +37,7 @@ public class EventKontrol {
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
 		//Her har vi indsat en switch som bliver brugt til at vælge hvilken genre det skal være
 		String genre = input.next();
-		String nygenre = null;
+		String nygenre = "Ingen genre";
 		switch (genre) {
 		case "1":
 			nygenre = "Musik";
@@ -63,7 +63,7 @@ public class EventKontrol {
 		System.out.println("Tast 4 for Foyersalen (Portalens Biograf) - 80 personer på stolerækker");
 		//Her har vi indsat endnu en switch som denne gang bliver den brugt til at vælge lokale
 		String lokale = input.next();
-		String nylokale = null;
+		String nylokale = "Intet lokale";
 		switch (lokale) {
 		case "1":
 			nylokale = "Portalens Teatersal";
@@ -103,7 +103,7 @@ public class EventKontrol {
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
 		
 		String genre = input.next();
-		String nygenre = null;
+		String nygenre = "Ingen genre";
 		switch (genre) {
 		case "1":
 			nygenre = "Musik";
@@ -128,7 +128,7 @@ public class EventKontrol {
 		System.out.println("Tast 4 for Foyersalen (Portalens Biograf) - 80 personer på stolerækker");
 		
 		String lokale = input.next();
-		String nylokale = null;
+		String nylokale = "Ingen lokale";
 		switch (lokale) {
 		case "1":
 			nylokale = "Portalens Teatersal";
