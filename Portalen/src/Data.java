@@ -6,7 +6,7 @@ public class Data {
 	ArrayList<Event> events;
 
 	public void generateUsers() {
-//	//Her vises alle arrangementer som er oprettet på forhånd, 
+//	Her vises alle arrangementer som er oprettet på forhånd, 
 //	hvor de bliver fordelt i kategorierne: Genre, kunstner, lokale og dato
 		events = new ArrayList<Event>();
 		events.add(new Event("Musik", "Justin Bieber", "Portalens Teatersal", "10/12/2015", 10));
