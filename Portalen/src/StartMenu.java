@@ -15,24 +15,24 @@ public class StartMenu {
 		
 		do	{
 			
-		int valg;
+		String valg;
 		System.out.println("1) Vis alle arrangementer \n2) Login ");
 		scanner = new Scanner(System.in);
-		valg = scanner.nextInt();
+		valg = scanner.next();
 		
-		if (valg == 1){
+		if (valg.equals("1")){
 			listOfEvents();
 
 		}
 		
 		
-		else if (valg == 2) {
+		else if (valg.equals("2")){
 			Program program = new Program(db);
 			program.login();
 			
 		}
 		else{
-			System.out.println("Tast 1 eller 2");
+			System.out.println("\nDu skal taste enten 1 eller 2");
 		}
 		}while(continueLoop);
 
