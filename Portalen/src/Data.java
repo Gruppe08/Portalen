@@ -1,12 +1,9 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Data {
 
 	private ArrayList<Admin> brugere;
-	private Admin currentBruger;
 	ArrayList<Event> events;
-	private Scanner input;
 
 	public void generateUsers() {
 //	//Her vises alle arrangementer som er oprettet på forhånd, 
