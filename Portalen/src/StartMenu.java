@@ -4,7 +4,7 @@ public class StartMenu {
 
 	Data db = new Data(); 
 	Scanner input = new Scanner(System.in);
-	EventKontrol ctrlEvent = new EventKontrol(input, db);
+	Event_Control ctrlEvent = new Event_Control(input, db);
 	private Scanner scanner;
 
 
@@ -27,7 +27,7 @@ public class StartMenu {
 		
 		
 		else if (valg.equals("2")){
-			Program program = new Program(db);
+			Menu program = new Menu(db);
 			program.login();
 			
 		}

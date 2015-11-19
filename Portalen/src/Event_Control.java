@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.util.Set;
-public class EventKontrol {
+public class Event_Control {
 	
 	private Scanner input;
 	private Data db; 
 	
-	public EventKontrol(Scanner input, Data db) {
+	public Event_Control(Scanner input, Data db) {
 		this.input = input;
 		this.db = db;
 	}

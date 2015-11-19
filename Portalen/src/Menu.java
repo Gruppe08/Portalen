@@ -1,30 +1,30 @@
 import java.util.Scanner;
 
-public class Program {
+public class Menu {
 
 	Data db;
 	Admin currentUser;
 	Scanner input = new Scanner(System.in);
-	EventKontrol ctrlEvent;
-	AdminKontrol ctrlUser;
+	Event_Control ctrlEvent;
+	User_Control ctrlUser;
 	
-	public Program(Data db){
+	public Menu(Data db){
 		this.db = db;
 		Scanner input = new Scanner(System.in);
-		ctrlEvent = new EventKontrol(input, db);
-		ctrlUser = new AdminKontrol(input, db);
+		ctrlEvent = new Event_Control(input, db);
+		ctrlUser = new User_Control(input, db);
 	}
 	
 	
-	//Her kører vi vores login, hvor hvis man er bruger vil man få vist brugermenuen og ellers får man vist adminmenuen
+	//Her kører vi vores login, hvor hvis man er user vil man få vist usermenuen og ellers får man vist adminmenuen
 
 	public void login() {
 
 		if (authenticate()) {
 			
-			if(currentUser instanceof Bruger) {
+			if(currentUser instanceof User) {
 				
-				brugerMenu();
+				userMenu();
 			} else {
 				
 				adminMenu();
@@ -40,31 +40,31 @@ public class Program {
 			String password;
 
 			input = new Scanner(System.in);
-	//Her skal man indtaste brugernavn og password
-			System.out.println("Indtast brugernavn for at logge ind: ");
+	//Her skal man indtaste usernavn og password
+			System.out.println("Indtast usernavn for at logge ind: ");
 			username = input.nextLine();
 			System.out.println("Skriv dit password: ");
 			password = input.nextLine();
 
-			for (Admin bruger : db.getBruger()) {
-	//Her ses om brugernavn og password matcher, hvis ja så logger man ind 	
-				if (bruger.getUsername().equals(username) && bruger.getPassword().equals(password)) {
-					currentUser = bruger;
+			for (Admin user : db.getuser()) {
+	//Her ses om usernavn og password matcher, hvis ja så logger man ind 	
+				if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+					currentUser = user;
 					return true;
 				}
 			}
 	//Hvis nej så bliver dette udskrevet
-			System.out.println("Forkert brugernavn eller kode, prøv igen\n");
+			System.out.println("Forkert usernavn eller kode, prøv igen\n");
 			StartMenu program = new StartMenu();
 			program.run();
 			return false;
 
 		}
 
-	//Her ses vores brugermenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
-	public void brugerMenu() {
+	//Her ses vores usermenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
+	public void userMenu() {
 		do {
-			printBrugerMenu();
+			printuserMenu();
 			int choice = input.nextInt();
 			switch (choice) {
 
@@ -114,13 +114,13 @@ public class Program {
 			switch (choice) {
 
 			case 1:
-				ctrlUser.listOfBrugere();
+				ctrlUser.listOfusere();
 				break;
 			case 2:
-				ctrlUser.addBruger();
+				ctrlUser.adduser();
 				break;
 			case 3:
-				ctrlUser.deleteBruger();
+				ctrlUser.deleteuser();
 				break;
 			case 4:
 				currentUser = null;
@@ -136,8 +136,8 @@ public class Program {
 	}
 
 
-	//Her printes brugermenuen
-	public void printBrugerMenu() {
+	//Her printes usermenuen
+	public void printuserMenu() {
 		System.out.println(
 				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n" 
 				+ "6) Søg efter event\n" + "7) Se arrangementer i samme genre\n"+ "8) Besøgstal efter genre\n" + "9) Log ud\n");
@@ -147,7 +147,7 @@ public class Program {
 	//Her printes adminmenuen
 	public void printAdminMenu() {
 		System.out.println(
-				"1) Vis alle brugere og admin \n" + "2) Tilføj ny bruger\n" + "3) Slet bruger\n" + "4) Log ud\n");
+				"1) Vis alle users og admin \n" + "2) Tilføj ny user\n" + "3) Slet user\n" + "4) Log ud\n");
 
 	}
 }
