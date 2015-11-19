@@ -48,8 +48,6 @@ public class StartMenu {
 					System.out.println("Kunstner: " + event.getKunstner());
 					System.out.println("Lokale: " + event.getLokale());
 					System.out.println("Dato: " + event.getDato());
-				
-
 					System.out.println("___________________________");
 				}
 			}

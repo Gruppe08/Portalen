@@ -47,7 +47,6 @@ public class Program {
 			password = input.nextInt();
 
 			for (Admin bruger : db.getBruger()) {
-				System.out.println(bruger.username);
 	//Her ses om brugernavn og password matcher, hvis ja så logger man ind 	
 				if (bruger.getUsername().equals(username) && bruger.getPassword() == password) {
 					currentUser = bruger;
