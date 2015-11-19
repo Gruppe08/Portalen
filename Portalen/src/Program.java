@@ -132,8 +132,6 @@ public class Program {
 			}
 
 	} while (currentUser != null);
-		StartMenu program = new StartMenu();
-		program.run();
 	System.out.println("Du er nu logget ud\n");
 
 	}
