@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Set;
 public class EventKontrol {
 	
 	private Scanner input;
@@ -172,6 +173,17 @@ public void updateEventVisitor() {															//Endnu ikke løst
 
 	}
 	//int visitor = input.nextInt();
+	
+	for (Event event : db.getEvents()) {
+		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
+				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato() + ", " + event.getVisitor());
+	}
+	System.out.print("Hvilket arrangement skal slettes? ");
+	int visit = input.nextInt();
+	System.out.print("Hvilket arrangement skal slettes? ");
+	//db.getEvents().set(input.nextInt(), visit); 
+	//db.getEvents().get()(1, 1); 
+	db.getEvents().set(visit, null);
 
 }
 public void searchEvent() {																	//Endnu ikke løst
@@ -236,7 +248,9 @@ public void searchEvent() {																	//Endnu ikke løst
 			break;
 		}
 		if (db.getEvents().contains(valg)) {
-			System.out.println("Find selve besøgstalet");
+			for (Event event : db.getEvents()) {
+				System.out.println(db.getEvents().indexOf(event) + event.getVisitor());
+			}
 		}
 		else
 			System.out.println("Der findes ingen arrangementer af denne type\n_________");
