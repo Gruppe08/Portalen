@@ -78,20 +78,28 @@ public class Event_Control {
 			nylokale = "Foyersalen (Portalens Biograf)";
 			break;
 		}
+		int visitor = 0;
 		System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
-		
 		String dato = input.next();
 		//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
+		boolean check = false;
 		for (Event event : db.getEvents())
 		{
 		if (event.getDato().equals(dato) && event.getLokale().equals(nylokale)){
-			System.out.println("Her er allerede booket. Du bliver sendt tilbage til menuen");
-			break;
-		}}
-		int visitor = 0;
+			System.out.println("\nHer er allerede booket. Du bliver sendt tilbage til menuen\n-------------\n");
+			//break;
+			check = true;
+		}
+		}
+		
+		if (check != true){
+			Event add = new Event(nygenre, kunstner, nylokale, dato, visitor);
+			db.getEvents().add(add);
+			System.out.println("\nEventet er nu blevet oprettet\n-------------\n");
+		}
 		//Her sætter vi så et helt nyt event hvor vi opdaterer alle de krav vi har sat i Event.java
-		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
-		db.getEvents().add(event);
+	//	Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
+		//db.getEvents().add(event);
 	}
 	//Dette afsnit ændrer eventet
 	public void changeEvent() {	
@@ -149,18 +157,25 @@ public class Event_Control {
 			nylokale = "Foyersalen (Portalens Biograf)";
 			break;
 		}
-		System.out.println("Skriv den nye dato, i følgende format: DD/MM/YYYY: ");
-		String dato = input.next();
-		System.out.println("Eventet er nu oprettet\n");									
-
-		while (db.getEvents().equals(dato + nylokale)) {
-			System.out.println("Denne er desværre allerede optaget, prøv igen");
-		}
-		
-		int visitor = 0;
-		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
-		db.getEvents().add(event);
-	}
+			int visitor = 0;
+			System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
+			String dato = input.next();
+			//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
+			boolean check = false;
+			for (Event event : db.getEvents())
+			{
+			if (event.getDato().equals(dato) && event.getLokale().equals(nylokale)){
+				System.out.println("\nHer er allerede booket. Du bliver sendt tilbage til menuen\n-------------\n");
+				//break;
+				check = true;
+			}
+			}
+			
+			if (check != true){
+				Event add = new Event(nygenre, kunstner, nylokale, dato, visitor);
+				db.getEvents().add(add);
+				System.out.println("\nEventet er nu blevet oprettet\n-------------\n");
+			}} 
 
 
 public void updateEventVisitor() {		
