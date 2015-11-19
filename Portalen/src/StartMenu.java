@@ -27,7 +27,7 @@ public class StartMenu {
 		
 		
 		else if (valg.equals("2")){
-			Menu program = new Menu(db);
+			Login program = new Login(db);
 			program.login();
 			
 		}

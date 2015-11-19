@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Menu {
+public class Login {
 
 	Data db;
 	Admin currentUser;
@@ -8,7 +8,7 @@ public class Menu {
 	Event_Control ctrlEvent;
 	User_Control ctrlUser;
 	
-	public Menu(Data db){
+	public Login(Data db){
 		this.db = db;
 		Scanner input = new Scanner(System.in);
 		ctrlEvent = new Event_Control(input, db);
