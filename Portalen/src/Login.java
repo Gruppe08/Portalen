@@ -63,7 +63,7 @@ public class Login {
 
 	//Her ses vores usermenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
 	public void userMenu() {
-		System.out.println("\n\n\nDu er nu logget ind som bruger\n");
+		System.out.println("\n\n\nDu er nu logget ind som bruger\n------------------------------\n");
 		do {
 			printuserMenu();
 			int choice = input.nextInt();
@@ -109,7 +109,7 @@ public class Login {
 	
 	//Her ses vores adminmenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
 	public void adminMenu() {
-		System.out.println("\n\n\nDu er nu logget ind som admin\n");
+		System.out.println("\n\n\nDu er nu logget ind som admin\n----------------------------\n");
 		do {
 						printAdminMenu();
 			int choice = input.nextInt();

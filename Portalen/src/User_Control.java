@@ -13,12 +13,12 @@ public class User_Control {
 	public void listOfusere() {	
 //Hvis der er ingen eksisterende usere udskrives dette:
 		if (db.getuser().size() == 0) {
-			System.out.println("Der er ingen usere");
+			System.out.println("Der er ingen brugere");
 //Her hentes der information om eksisterende usere, som derefter udskrives
 		} else {
-			System.out.println("Her er alle eksisterende usere og admins: ");
+			System.out.println("Her er alle eksisterende brugere og admins: ");
 			for (Admin user : db.getuser()) {
-				System.out.println("usernavn: " + user.getUsername() + " Password: " + user.getPassword());
+				System.out.println("Username: " + user.getUsername() + " \nPassword: " + user.getPassword() + "\n-------");
 
 			}
 			
@@ -26,7 +26,7 @@ public class User_Control {
 		}
 //Her bliver muligt at tilføje ny user, med nyt password og nyt usernavn
 	public void adduser() {
-		System.out.println("usernavn: ");
+		System.out.println("Username: ");
 		String username = input.next();
 		System.out.println("Password: ");
 		String password = input.next();
@@ -44,7 +44,7 @@ public class User_Control {
 					+ user.getPassword());
 		}
 //Her vælger adminen hvilken user der skal slettes
-		System.out.print("Hvilken user skal slettes? ");
+		System.out.print("Hvilken bruger skal slettes? ");
 		db.getuser().remove(input.nextInt());
 
 }}
