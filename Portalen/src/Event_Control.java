@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Set;
 public class Event_Control {
 	
 	private Scanner input;
@@ -83,6 +82,12 @@ public class Event_Control {
 		
 		String dato = input.next();
 		//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
+		for (Event event : db.getEvents())
+		{
+		if (event.getDato().equals(dato) && event.getLokale().equals(nylokale)){
+			System.out.println("Her er allerede booket. Du bliver sendt tilbage til menuen");
+			break;
+		}}
 		int visitor = 0;
 		//Her sætter vi så et helt nyt event hvor vi opdaterer alle de krav vi har sat i Event.java
 		Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
@@ -146,7 +151,7 @@ public class Event_Control {
 		}
 		System.out.println("Skriv den nye dato, i følgende format: DD/MM/YYYY: ");
 		String dato = input.next();
-		System.out.println("Eventet er nu oprettet\n");										//Endnu ikke løst
+		System.out.println("Eventet er nu oprettet\n");									
 
 		while (db.getEvents().equals(dato + nylokale)) {
 			System.out.println("Denne er desværre allerede optaget, prøv igen");
@@ -171,7 +176,7 @@ public void updateEventVisitor() {
 
 
 }
-public void searchEventRoom() {																	//Endnu ikke løst
+public void searchEventRoom() {																	
 	System.out.println("Vælg lokale: ");
 	System.out.println("Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
 	System.out.println("Tast 2 for Kabaret-scenen - 120 personer ved café-borde / 150 personer på stolerækker");
@@ -206,7 +211,7 @@ if (event.getLokale().equals(valg)){
 	}}
 
 }
-	public void searchEventGenre() {														//Endnu ikke løst
+	public void searchEventGenre() {														
 		System.out.println("Vælg genre: ");
 		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
 		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
