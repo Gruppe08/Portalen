@@ -147,7 +147,7 @@ public class Program {
 	//Her printes adminmenuen
 	public void printAdminMenu() {
 		System.out.println(
-				"1) Vis alle brugere \n" + "2) Tilføj ny bruger\n" + "3) Slet bruger\n" + "4) Log ud\n");
+				"1) Vis alle brugere og admin \n" + "2) Tilføj ny bruger\n" + "3) Slet bruger\n" + "4) Log ud\n");
 
 	}
 }
