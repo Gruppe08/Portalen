@@ -158,42 +158,53 @@ public class Event_Control {
 	}
 
 
-public void updateEventVisitor() {															//Endnu ikke løst
-	for (Event event : db.getEvents()) {
-		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
-				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato() + ", " + event.getVisitor());
-		
-		db.getEvents().remove(input.nextInt()); 
-
-	event.setVisitor(20);
-//	db.getEvents().setVisitor(20)(input.nextInt()); //Bedste løsning!
-//	db.getEvents().set(visitor());
-//	Visitor visitor = new Event(visitor);
-//	db.getEvents().add(event);
-
-	}
-	//int visitor = input.nextInt();
-	
+public void updateEventVisitor() {		
 	for (Event event : db.getEvents()) {
 		System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
 				+ event.getKunstner() + ", " + event.getLokale() + ", " + event.getDato() + ", " + event.getVisitor());
 	}
-	System.out.print("Hvilket arrangement skal slettes? ");
-	int visit = input.nextInt();
-	System.out.print("Hvilket arrangement skal slettes? ");
-	//db.getEvents().set(input.nextInt(), visit); 
-	//db.getEvents().get()(1, 1); 
-	db.getEvents().set(visit, null);
+		System.out.println("\nHvilket event vil du opdatere besøgstal på?");
+		int valg = input.nextInt();
+		System.out.println("\nHvad skal det nye besøgstal være?\n");
+		int visit = input.nextInt();
+		db.getEvents().get(valg).setVisitor(visit);
+
 
 }
-public void searchEvent() {																	//Endnu ikke løst
-	System.out.println("Indtast dit søgeord: ");
-	String search = input.next();
-	if (db.getEvents().contains(search)) {
-		System.out.println("Udskriv her alle arrangementerne");
+public void searchEventRoom() {																	//Endnu ikke løst
+	System.out.println("Vælg lokale: ");
+	System.out.println("Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
+	System.out.println("Tast 2 for Kabaret-scenen - 120 personer ved café-borde / 150 personer på stolerækker");
+	System.out.println("Tast 3 for Mødelokale 1 - 80 personer ved café-borde / 120 personer på stolerækker");
+	System.out.println("Tast 4 for Foyersalen (Portalens Biograf) - 80 personer på stolerækker");
+	
+	String valget = input.next();
+	String valg = null;
+	switch (valget) {
+	case "1":
+		valg = "Portalens Teatersal";
+		break;
+	case "2":
+		valg = "Kabaret-scenen";
+		break;
+	case "3":
+		valg = "Mødelokale 1";
+		break;
+	case "4":
+		valg = "Foyersalen (Portalens Biograf)";
+		break;
 	}
-	else
-		System.out.println("Intet arrangement hedder dette\n____________");
+for (Event event : db.getEvents())
+{
+if (event.getLokale().equals(valg)){
+	System.out.println("Genre: " + event.getGenre());
+	System.out.println("Kunstner: " + event.getKunstner());
+	System.out.println("Lokale: " + event.getLokale());
+	System.out.println("Dato: " + event.getDato());
+	System.out.println("Besøgende: " + event.getVisitor());
+	System.out.println("___________________________");
+	}}
+
 }
 	public void searchEventGenre() {														//Endnu ikke løst
 		System.out.println("Vælg genre: ");
@@ -218,12 +229,17 @@ public void searchEvent() {																	//Endnu ikke løst
 			valg = "Børneunderholdning";
 			break;
 		}
-		if (db.getEvents().contains(valg)) {
-			System.out.println("Udskriv alle arrangementer af denne type");
-		}
-		else
-			System.out.println("Der findes ingen arrangementer af denne type\n_________");
-}
+	for (Event event : db.getEvents())
+	{
+	if (event.getGenre().equals(valg)){
+		System.out.println("Genre: " + event.getGenre());
+		System.out.println("Kunstner: " + event.getKunstner());
+		System.out.println("Lokale: " + event.getLokale());
+		System.out.println("Dato: " + event.getDato());
+		System.out.println("Besøgende: " + event.getVisitor());
+		System.out.println("___________________________");
+		}}}
+
 	public void visitorEvent() {															//Endnu ikke løst
 		System.out.println("Vælg genre: ");
 		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
@@ -247,16 +263,14 @@ public void searchEvent() {																	//Endnu ikke løst
 			valg = "Børneunderholdning";
 			break;
 		}
-		if (db.getEvents().contains(valg)) {
-			for (Event event : db.getEvents()) {
-				System.out.println(db.getEvents().indexOf(event) + event.getVisitor());
-			}
-		}
-		else
-			System.out.println("Der findes ingen arrangementer af denne type\n_________");
-
-		
+	for (Event event : db.getEvents())
+	{
+	if (event.getGenre().equals(valg)){
+		System.out.println("Besøgende: " + event.getVisitor());
+		System.out.println("___________________________");
+		}}
 	}
+
 	public void deleteEvent() {
 		for (Event event : db.getEvents()) {
 			System.out.println(db.getEvents().indexOf(event) + ": " + event.getGenre() + ", "
