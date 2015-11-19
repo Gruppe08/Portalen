@@ -41,9 +41,9 @@ public class Login {
 
 			input = new Scanner(System.in);
 	//Her skal man indtaste usernavn og password
-			System.out.println("Indtast usernavn for at logge ind: ");
+			System.out.println("Indtast brugernavn for at logge ind: ");
 			username = input.nextLine();
-			System.out.println("Skriv dit password: ");
+			System.out.println("Skriv din kode: ");
 			password = input.nextLine();
 
 			for (Admin user : db.getuser()) {
