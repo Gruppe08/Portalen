@@ -20,12 +20,12 @@ public class Data {
 
 //Her vises alle brugere og admins, hvor man ser deres brugernavn (Sring) og passwords(Int)	
 		brugere = new ArrayList<Admin>();
-		brugere.add(new Bruger("a", 1, events));
-		brugere.add(new Bruger("William Karberg", 1234, events));
-		brugere.add(new Bruger("Simon Ottosen", 1234, events));
-		brugere.add(new Bruger("Bianca Juul-Hansen", 1234, events));
-		brugere.add(new Bruger("Peter Wynn Viuff", 1234, events));
-		brugere.add(new Admin("b", 2));
+		brugere.add(new Bruger("a", "1", events));
+		brugere.add(new Bruger("William Karberg", "kode", events));
+		brugere.add(new Bruger("Simon Ottosen", "1234", events));
+		brugere.add(new Bruger("Bianca Juul-Hansen", "1234", events));
+		brugere.add(new Bruger("Peter Wynn Viuff", "1234", events));
+		brugere.add(new Admin("b", "2"));
 
 	}
 

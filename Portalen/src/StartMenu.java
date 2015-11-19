@@ -12,7 +12,9 @@ public class StartMenu {
 	public void run() {
 		db.generateUsers();
 		boolean continueLoop = true;
-		do{
+		
+		do	{
+			
 		int valg;
 		System.out.println("1) Vis alle arrangementer \n2) Login ");
 		scanner = new Scanner(System.in);

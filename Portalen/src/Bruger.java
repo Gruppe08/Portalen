@@ -8,13 +8,14 @@ public class Bruger extends Admin {
 
 	private ArrayList<Event> events;
 
-	public Bruger(String username, int password, ArrayList<Event> events) {
+	public Bruger(String username, String password, ArrayList<Event> events) {
 		super(username, password);
 		this.events = events;
 	
 	}
 //Her oprettes getter og setter for username, password og arraylisten
-	
+
+
 	public String getUsername() {
 		return username;
 	}
@@ -23,11 +24,11 @@ public class Bruger extends Admin {
 		this.username = username;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 
 	}

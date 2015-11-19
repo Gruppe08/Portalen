@@ -37,18 +37,18 @@ public class Program {
 		public boolean authenticate() {
 
 			String username;
-			int password;
+			String password;
 
 			input = new Scanner(System.in);
 	//Her skal man indtaste brugernavn og password
 			System.out.println("Indtast brugernavn for at logge ind: ");
 			username = input.nextLine();
 			System.out.println("Skriv dit password: ");
-			password = input.nextInt();
+			password = input.nextLine();
 
 			for (Admin bruger : db.getBruger()) {
 	//Her ses om brugernavn og password matcher, hvis ja så logger man ind 	
-				if (bruger.getUsername().equals(username) && bruger.getPassword() == password) {
+				if (bruger.getUsername().equals(username) && bruger.getPassword().equals(password)) {
 					currentUser = bruger;
 					return true;
 				}

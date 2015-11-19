@@ -4,9 +4,9 @@ public class Admin {
 	
 	
 	protected String username;
-	protected int password;
+	protected String password;
 
-	public Admin(String username, int password) {
+	public Admin(String username, String password) {
 		this.username = username;
 		this.password = password;
 		
@@ -20,11 +20,11 @@ public class Admin {
 		this.username = username;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 
 	}

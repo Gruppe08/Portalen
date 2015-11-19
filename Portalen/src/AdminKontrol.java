@@ -29,7 +29,7 @@ public class AdminKontrol {
 		System.out.println("Brugernavn: ");
 		String username = input.next();
 		System.out.println("Password, kun med tal: ");
-		int password = input.nextInt();
+		String password = input.next();
 //Her henter den information fra Bruger klassen og laver event=null
 		Bruger bruger = new Bruger(username, password, null);
 		db.getBruger().add(bruger);
