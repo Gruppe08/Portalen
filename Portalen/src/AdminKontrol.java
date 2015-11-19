@@ -16,7 +16,7 @@ public class AdminKontrol {
 			System.out.println("Der er ingen brugere");
 //Her hentes der information om eksisterende brugere, som derefter udskrives
 		} else {
-			System.out.println("Her er alle eksisterende brugere: ");
+			System.out.println("Her er alle eksisterende brugere og admins: ");
 			for (Admin bruger : db.getBruger()) {
 				System.out.println("Brugernavn: " + bruger.getUsername() + " Password: " + bruger.getPassword());
 
@@ -28,7 +28,7 @@ public class AdminKontrol {
 	public void addBruger() {
 		System.out.println("Brugernavn: ");
 		String username = input.next();
-		System.out.println("Password, kun med tal: ");
+		System.out.println("Password: ");
 		String password = input.next();
 //Her henter den information fra Bruger klassen og laver event=null
 		Bruger bruger = new Bruger(username, password, null);
