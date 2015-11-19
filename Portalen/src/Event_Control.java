@@ -166,7 +166,6 @@ public class Event_Control {
 			{
 			if (event.getDato().equals(dato) && event.getLokale().equals(nylokale)){
 				System.out.println("\nHer er allerede booket. Du bliver sendt tilbage til menuen\n-------------\n");
-				//break;
 				check = true;
 			}
 			}
@@ -188,6 +187,8 @@ public void updateEventVisitor() {
 		System.out.println("\nHvad skal det nye besøgstal være?\n");
 		int visit = input.nextInt();
 		db.getEvents().get(valg).setVisitor(visit);
+		System.out.println("\nBesøgstallet er nu opdateret til " + visit + "\n-------------\n");
+
 
 
 }
