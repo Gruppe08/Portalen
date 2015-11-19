@@ -31,42 +31,9 @@ public class Data {
 		brugere.add(new Admin("b", 2));
 
 	}
-//Her ses login systemet
-	public boolean login() {
 
-		String username;
-		int password;
-
-		input = new Scanner(System.in);
-//Her skal man indtaste brugernavn og password
-		System.out.println("Indtast brugernavn for at logge ind: ");
-		username = input.nextLine();
-		System.out.println("Skriv dit password: ");
-		password = input.nextInt();
-
-		for (Admin bruger : brugere) {
-//Her ses om brugernavn og password matcher, hvis ja så logger man ind 	
-			if (bruger.getUsername().equals(username) && bruger.getPassword() == password) {
-				setCurrentBruger(bruger);
-				return true;
-			}
-		}
-//Hvis nej så bliver dette udskrevet
-		System.out.println("Forkert brugernavn eller kode, prøv igen\n");
-		StartMenu program = new StartMenu();
-		program.run();
-		return false;
-
-	}
 		
 //Getters & Setters
-	public Admin getCurrentBruger() {
-		return currentBruger;
-	}
-
-	public void setCurrentBruger(Admin bruger) {
-		this.currentBruger = bruger;
-	}
 	
 	public ArrayList<Event> getEvents() {
 		return events;

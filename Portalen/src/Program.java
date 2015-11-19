@@ -2,20 +2,27 @@ import java.util.Scanner;
 
 public class Program {
 
-	Data db = new Data();
+	Data db;
+	Admin currentUser;
 	Scanner input = new Scanner(System.in);
-	EventKontrol ctrlEvent = new EventKontrol(input, db);
-	AdminKontrol ctrlUser = new AdminKontrol(input, db);
+	EventKontrol ctrlEvent;
+	AdminKontrol ctrlUser;
+	
+	public Program(Data db){
+		this.db = db;
+		Scanner input = new Scanner(System.in);
+		ctrlEvent = new EventKontrol(input, db);
+		ctrlUser = new AdminKontrol(input, db);
+	}
 	
 	
 	//Her kører vi vores login, hvor hvis man er bruger vil man få vist brugermenuen og ellers får man vist adminmenuen
 
 	public void login() {
-		db.generateUsers();
 
-		if (db.login()) {
+		if (authenticate()) {
 			
-			if(db.getCurrentBruger() instanceof Bruger) {
+			if(currentUser instanceof Bruger) {
 				
 				brugerMenu();
 			} else {
@@ -25,6 +32,35 @@ public class Program {
 
 		}
 	}
+	
+	//Her ses login systemet
+		public boolean authenticate() {
+
+			String username;
+			int password;
+
+			input = new Scanner(System.in);
+	//Her skal man indtaste brugernavn og password
+			System.out.println("Indtast brugernavn for at logge ind: ");
+			username = input.nextLine();
+			System.out.println("Skriv dit password: ");
+			password = input.nextInt();
+
+			for (Admin bruger : db.getBruger()) {
+				System.out.println(bruger.username);
+	//Her ses om brugernavn og password matcher, hvis ja så logger man ind 	
+				if (bruger.getUsername().equals(username) && bruger.getPassword() == password) {
+					currentUser = bruger;
+					return true;
+				}
+			}
+	//Hvis nej så bliver dette udskrevet
+			System.out.println("Forkert brugernavn eller kode, prøv igen\n");
+			StartMenu program = new StartMenu();
+			program.run();
+			return false;
+
+		}
 
 	//Her ses vores brugermenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
 	public void brugerMenu() {
@@ -58,16 +94,14 @@ public class Program {
 				ctrlEvent.visitorEvent();
 				break;
 			case 9:
-				logOut();
+				currentUser = null;
 				break;
 
 			default:
 				break;
 			}
 
-		} while (db.getCurrentBruger() != null);
-		StartMenu program = new StartMenu();
-		program.run();
+		} while (currentUser != null);
 		System.out.println("Du er nu logget ud");
 
 	}
@@ -90,23 +124,20 @@ public class Program {
 				ctrlUser.deleteBruger();
 				break;
 			case 4:
-				logOut();
+				currentUser = null;
 				break;
 
 			default:
 				break;
 			}
 
-	} while (db.getCurrentBruger() != null);
+	} while (currentUser != null);
 		StartMenu program = new StartMenu();
 		program.run();
 	System.out.println("Du er nu logget ud\n");
 
 	}
 
-	public void logOut() {
-		db.setCurrentBruger(null);
-	}
 
 	//Her printes brugermenuen
 	public void printBrugerMenu() {
