@@ -185,13 +185,31 @@ public void updateEventVisitor() {
 		System.out.println("\nHvilket event vil du opdatere besøgstal på?");
 		int valg = input.nextInt();
 		System.out.println("\nHvad skal det nye besøgstal være?\n");
-		int visit = input.nextInt();
+        Scanner nyScan = new Scanner (System.in);
+        String input = nyScan.nextLine ();
+        int visit = 0;
+        while (true) {
+            if (visit >= 0) {
+                try {
+                    visit = Integer.parseInt (input);
+                    break;
+                }
+                catch (NumberFormatException e) {
+                }
+            }
+
+            System.out.println ("Fejl! Du skal indtaste et tal: ");
+            input = nyScan.nextLine ();
+
+        }
+
 		db.getEvents().get(valg).setVisitor(visit);
 		System.out.println("\nBesøgstallet er nu opdateret til " + visit + "\n-------------\n");
+    }
 
 
 
-}
+
 public void searchEventRoom() {																	
 	System.out.println("Vælg lokale: ");
 	System.out.println("Tast 1 for Portalens Teatersal - Det er muligt at leje Portalens lokaler med plads til mellem 10 og 752 personer.");
