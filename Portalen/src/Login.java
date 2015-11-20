@@ -27,7 +27,7 @@ public class Login {
 				userMenu();
 			} else {
 				
-				adminMenu();
+				adminMenu(currentUser);
 			}
 
 		}
@@ -125,7 +125,7 @@ public class Login {
 	
 	
 	//Her ses vores adminmenu, hvor det er muligt at vælge en af følgende cases, for at blive sendt videre
-	public void adminMenu() {
+	public void adminMenu(Admin currentUser) {
 		System.out.println("\n\n\nDu er nu logget ind som admin\n----------------------------\n");
 		do {
 	        Scanner nyScan = new Scanner (System.in);
@@ -155,7 +155,7 @@ public class Login {
 				ctrlUser.adduser();
 				break;
 			case 3:
-				ctrlUser.deleteuser();
+				ctrlUser.deleteuser(currentUser);
 				break;
 			case 4:
 				currentUser = null;

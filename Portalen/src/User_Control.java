@@ -46,8 +46,8 @@ public class User_Control {
 			db.getuser().add(user);
 			System.out.println("\nBrugeren " + username + " er blevet oprettet\n-------------");
 		}	}
-//Her slettes der en valgfri af de oprettet user
-	public void deleteuser() {
+//Her slettes der en valgfri af de oprettet user. Vi henter Admin currentUser ind, da vi skal bruge den, for at se om admin selv er logget ind
+	public void deleteuser(Admin currentUser) { 
 //Her bliver der hentet information om alle eksisterende usere
 		for (Admin user : db.getuser()) {
 			System.out.println(db.getuser().indexOf(user) + ": " + user.getUsername() + ", "
@@ -55,6 +55,16 @@ public class User_Control {
 		}
 //Her vælger adminen hvilken user der skal slettes
 		System.out.print("Hvilken bruger skal slettes? ");
-		db.getuser().remove(input.nextInt());
-		System.out.print("Brugeren er blevet slettet \n");
+		int choice = input.nextInt();
+		Admin userToDelete = db.getuser().get(choice);
+		//Hvis den bruger der er logget på, prøver at slette sin egen konto, bliver han nægtet
+		if(userToDelete == currentUser){
+			System.out.println("\nAdmin kan ikke slettes \n-----------");
+		}
+		//Hvis han ikke prøver at slette sig selv, så skal vi slette den bruger han prøver at slette
+		else
+		{
+			db.getuser().remove(choice);
+			System.out.print("\nBrugeren er blevet slettet \n-----------");
+		}
 }}
