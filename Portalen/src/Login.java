@@ -128,9 +128,25 @@ public class Login {
 	public void adminMenu() {
 		System.out.println("\n\n\nDu er nu logget ind som admin\n----------------------------\n");
 		do {
-						printAdminMenu();
-			int choice = input.nextInt();
-			switch (choice) {
+	        Scanner nyScan = new Scanner (System.in);
+			printAdminMenu();
+			int choice = 0;
+	        String input = nyScan.nextLine ();
+	        while (true) {
+	            if (choice >= 4) {
+	                try {
+	                    choice = Integer.parseInt (input);
+	                    break;
+	                }
+	                catch (NumberFormatException e) {
+	                }
+	            }
+
+	            System.out.println ("Fejl! Du skal indtaste et tal fra 1-4: \n");
+				printAdminMenu();
+	            input = nyScan.nextLine ();
+
+	        }			switch (choice) {
 
 			case 1:
 				ctrlUser.listOfusere();
