@@ -68,7 +68,6 @@ public class Login {
 			printuserMenu();
 			int choice = input.nextInt();
 			switch (choice) {
-
 			case 1:
 				ctrlEvent.listOfEvents();
 				break;

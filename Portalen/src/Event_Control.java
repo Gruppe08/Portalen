@@ -302,13 +302,16 @@ if (event.getLokale().equals(valg)){
 			valg = "Børneunderholdning";
 			break;
 		}
-		int total = 0;
+		//Vi starter med at sætte vores total til 0
+		int total = 0; 
 	for (Event event : db.getEvents())
 	{
 	if (event.getGenre().equals(valg)){
-		total += event.getVisitor();
+		//Efter vi har valgt en genre, så sætter kører vi alle genre igennem og ligger deres besøgstal sammen i int total, som så vil ændre værdi
+		total += event.getVisitor(); 
 		}
 	}
+	//Efter vores loop har kørt igennem, så vil vi så udskrive værdien af total efter den har regnet de besøgende sammen
 	System.out.println("\nI kategorien " + valg + " er der i alt " + total + " besøgende\n------------");
 	}
 
