@@ -33,7 +33,7 @@ public class User_Control {
 //Her henter den information fra user klassen og laver event=null
 		User user = new User(username, password, null);
 		db.getuser().add(user);
-
+		System.out.println(username + " er blevet oprettet\n");
 		
 	}
 //Her slettes der en valgfri af de oprettet user
@@ -46,5 +46,5 @@ public class User_Control {
 //Her vælger adminen hvilken user der skal slettes
 		System.out.print("Hvilken bruger skal slettes? ");
 		db.getuser().remove(input.nextInt());
-
+		System.out.print("Brugeren er blevet slettet \n");
 }}
