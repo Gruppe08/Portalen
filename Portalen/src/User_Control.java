@@ -27,9 +27,9 @@ public class User_Control {
 //Her bliver muligt at tilføje ny user, med nyt password og nyt usernavn
 	public void adduser() {
 		System.out.println("Username: ");
-		String username = input.next();
+		String username = input.nextLine();
 		System.out.println("Password: ");
-		String password = input.next();
+		String password = input.nextLine();
 //Her henter den information fra user klassen og laver event=null
 		User user = new User(username, password, null);
 		db.getuser().add(user);
