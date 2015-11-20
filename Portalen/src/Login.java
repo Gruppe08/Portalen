@@ -70,7 +70,7 @@ public class Login {
 			int choice = 0;
 	        String input = nyScan.nextLine ();
 	        while (true) {
-	            if (choice >= 9) {
+	            if (choice <= 0) {
 	                try {
 	                    choice = Integer.parseInt (input);
 	                    break;
@@ -133,7 +133,7 @@ public class Login {
 			int choice = 0;
 	        String input = nyScan.nextLine ();
 	        while (true) {
-	            if (choice >= 4) {
+	            if (choice <= 0) {
 	                try {
 	                    choice = Integer.parseInt (input);
 	                    break;
