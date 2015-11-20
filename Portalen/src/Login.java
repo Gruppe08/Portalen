@@ -65,8 +65,26 @@ public class Login {
 	public void userMenu() {
 		System.out.println("\n\n\nDu er nu logget ind som bruger\n------------------------------\n");
 		do {
+	        Scanner nyScan = new Scanner (System.in);
 			printuserMenu();
-			int choice = input.nextInt();
+			int choice = 0;
+	        String input = nyScan.nextLine ();
+	        while (true) {
+	            if (choice >= 9) {
+	                try {
+	                    choice = Integer.parseInt (input);
+	                    break;
+	                }
+	                catch (NumberFormatException e) {
+	                }
+	            }
+
+	            System.out.println ("Fejl! Du skal indtaste et tal fra 1-9: \n");
+				printuserMenu();
+	            input = nyScan.nextLine ();
+
+	        }
+
 			switch (choice) {
 			case 1:
 				ctrlEvent.listOfEvents();
