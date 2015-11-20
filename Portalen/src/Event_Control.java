@@ -78,20 +78,20 @@ public class Event_Control {
 			nylokale = "Foyersalen (Portalens Biograf)";
 			break;
 		}
+		//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
 		int visitor = 0;
 		System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
 		String dato = input.next();
-		//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
+		// Vi bruger en boolean for at se om vores if statement er sandt, da vi ikke kan oprettet et event i et for-loop
 		boolean check = false;
 		for (Event event : db.getEvents())
 		{
 		if (event.getDato().equals(dato) && event.getLokale().equals(nylokale)){
 			System.out.println("\nHer er allerede booket. Du bliver sendt tilbage til menuen\n-------------\n");
-			//break;
-			check = true;
+			check = true; 
 		}
 		}
-		
+		//Da vi har sagt at boolean er true i vores if-statement ovenover, siger vi her at den ikke må være true, hvis eventet skal oprettes
 		if (check != true){
 			Event add = new Event(nygenre, kunstner, nylokale, dato, visitor);
 			db.getEvents().add(add);

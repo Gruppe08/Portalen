@@ -30,12 +30,22 @@ public class User_Control {
 		String username = input.nextLine();
 		System.out.println("Password: ");
 		String password = input.nextLine();
-//Her henter den information fra user klassen og laver event=null
-		User user = new User(username, password, null);
-		db.getuser().add(user);
-		System.out.println("\nBrugeren " + username + " er blevet oprettet\n-------------");
-		
-	}
+		// Vi bruger en boolean for at se om vores if statement er sandt, da vi ikke kan oprettet et event i et for-loop
+		boolean check = false;
+		//Her henter den information fra user klassen og laver event=null
+		for (Admin user : db.getuser())
+		{
+		if (user.getUsername().equals(username) && user.getPassword().equals(password)){
+			System.out.println("\nBrugeren findes allerede. Du bliver sendt tilbage til menuen\n-------------\n");
+			check = true; 
+		}
+		}
+		//Da vi har sagt at boolean er true i vores if-statement ovenover, siger vi her at den ikke må være true, hvis eventet skal oprettes
+		if (check != true){
+			User user = new User(username, password, null);
+			db.getuser().add(user);
+			System.out.println("\nBrugeren " + username + " er blevet oprettet\n-------------");
+		}	}
 //Her slettes der en valgfri af de oprettet user
 	public void deleteuser() {
 //Her bliver der hentet information om alle eksisterende usere
