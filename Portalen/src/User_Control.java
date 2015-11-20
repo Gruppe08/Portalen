@@ -35,7 +35,7 @@ public class User_Control {
 		//Her henter den information fra user klassen og laver event=null
 		for (Admin user : db.getuser())
 		{
-		if (user.getUsername().equals(username) && user.getPassword().equals(password)){
+		if (user.getUsername().equals(username)) {
 			System.out.println("\nBrugeren findes allerede. Du bliver sendt tilbage til menuen\n-------------\n");
 			check = true; 
 		}
