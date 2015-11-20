@@ -287,7 +287,7 @@ if (event.getLokale().equals(valg)){
 		System.out.println("Tast 4 for Børneunderholdning (Trylleri, Cirkusklovne m.m)");
 		
 		String valget = input.next();
-		String valg = null;
+		String valg = "Ingen kategori";
 		switch (valget) {
 		case "1":
 			valg = "Musik";
@@ -302,12 +302,14 @@ if (event.getLokale().equals(valg)){
 			valg = "Børneunderholdning";
 			break;
 		}
+		int total = 0;
 	for (Event event : db.getEvents())
 	{
 	if (event.getGenre().equals(valg)){
-		System.out.println("Besøgende: " + event.getVisitor());
-		System.out.println("___________________________");
-		}}
+		total += event.getVisitor();
+		}
+	}
+	System.out.println("\nI kategorien " + valg + " er der i alt " + total + " besøgende\n------------");
 	}
 
 	public void deleteEvent() {

@@ -142,7 +142,7 @@ public class Login {
 	public void printuserMenu() {
 		System.out.println(
 				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n" 
-				+ "6) Se arrangementer i samme lokale\n" + "7) Se arrangementer i samme genre\n"+ "8) Se samlet besøgstal for genre(IKKE LØST)\n" + "9) Log ud\n");
+				+ "6) Se arrangementer i samme lokale\n" + "7) Se arrangementer i samme genre\n"+ "8) Se samlet besøgstal for genre\n" + "9) Log ud\n");
 
 	}
 	
