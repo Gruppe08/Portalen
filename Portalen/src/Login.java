@@ -54,7 +54,7 @@ public class Login {
 				}
 			}
 	//Hvis nej så bliver dette udskrevet
-			System.out.println("Forkert usernavn eller kode, prøv igen\n");
+			System.out.println("Forkert brugernavn eller kode, prøv igen\n");
 			StartMenu program = new StartMenu();
 			program.run();
 			return false;
