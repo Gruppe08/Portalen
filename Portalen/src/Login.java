@@ -174,15 +174,25 @@ public class Login {
 	//Her printes usermenuen
 	public void printuserMenu() {
 		System.out.println(
-				"1) Vis arrangementer\n" + "2) Tilføj nyt arrangement\n" + "3) Ændre eksisterende arrangement\n" + "4) Slet arrangement\n" + "5) Opdater besøgstal\n" 
-				+ "6) Se arrangementer i samme lokale\n" + "7) Se arrangementer i samme genre\n"+ "8) Se samlet besøgstal for genre\n" + "9) Log ud\n");
+				"1) Vis arrangementer\n" +
+				"2) Tilføj nyt arrangement\n" +
+				"3) Ændre eksisterende arrangement\n" +
+				"4) Slet arrangement\n" +
+				"5) Opdater besøgstal\n" +
+				"6) Se arrangementer i samme lokale\n" +
+				"7) Se arrangementer i samme genre\n"+
+				"8) Se samlet besøgstal for genre\n" +
+				"9) Log ud\n");
 
 	}
 	
 	//Her printes adminmenuen
 	public void printAdminMenu() {
 		System.out.println(
-				"1) Vis alle users og admin \n" + "2) Tilføj ny user\n" + "3) Slet user\n" + "4) Log ud\n");
+				"1) Vis alle users og admin \n" +
+				"2) Tilføj ny user\n" +
+				"3) Slet user\n" +
+				"4) Log ud\n");
 
 	}
 }
