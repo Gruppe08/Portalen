@@ -1,10 +1,10 @@
 import java.util.Scanner;
-public class Event_Control {
+public class EventControl {
 	
 	private Scanner input;
 	private Data db; 
 	
-	public Event_Control(Scanner input, Data db) {
+	public EventControl(Scanner input, Data db) {
 		this.input = input;
 		this.db = db;
 	}

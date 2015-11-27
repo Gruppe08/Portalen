@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
-public class Login {
+public class LoginMenu {
 
 	Data db;
 	Admin currentUser;
 	Scanner input = new Scanner(System.in);
-	Event_Control ctrlEvent;
-	User_Control ctrlUser;
+	EventControl ctrlEvent;
+	UserControl ctrlUser;
 	
-	public Login(Data db){
+	public LoginMenu(Data db){
 		this.db = db;
 		Scanner input = new Scanner(System.in);
-		ctrlEvent = new Event_Control(input, db);
-		ctrlUser = new User_Control(input, db);
+		ctrlEvent = new EventControl(input, db);
+		ctrlUser = new UserControl(input, db);
 	}
 	
 	

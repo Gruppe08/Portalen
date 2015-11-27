@@ -1,11 +1,11 @@
 import java.util.Scanner;
-public class User_Control {
+public class UserControl {
 	
 	private Scanner input;
 	private Data db; 
 	
 
-	public User_Control(Scanner input, Data db) {
+	public UserControl(Scanner input, Data db) {
 		this.input = input;
 		this.db = db;
 	}
