@@ -80,8 +80,10 @@ public class EventControl {
 		}
 		//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
 		int visitor = 0;
-		System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
-		String dato = input.next();
+		System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");	
+		input.nextLine();
+		String dato = input.nextLine();
+
 		// Vi bruger en boolean for at se om vores if statement er sandt, da vi ikke kan oprettet et event i et for-loop
 		boolean check = false;
 		for (Event event : db.getEvents())
@@ -110,7 +112,7 @@ public class EventControl {
 		System.out.print("Hvilket arrangement skal ændres? ");
 		//Her vælger vi at slette det gamle event og bede brugeren om at indtaste de nye information som skal erstattes
 		db.getEvents().remove(input.nextInt()); 
-		System.out.println("Vælg type optræden: ");
+		System.out.println("\n\nVælg type optræden: ");
 		System.out.println("Tast 1 for Musik (Rock, Pop, Jazz m.m)");
 		System.out.println("Tast 2 for Comedy (Stand-up, Sketchshow m.m)");
 		System.out.println("Tast 3 for Scenekunst (Teater, Musicals m.m)");
@@ -159,7 +161,8 @@ public class EventControl {
 		}
 			int visitor = 0;
 			System.out.println("Skriv dato, i følgende format: DD/MM/YYYY: ");
-			String dato = input.next();
+			input.nextLine();
+			String dato = input.nextLine();
 			//Vi sætter visitor til 0, da eventet jo bliver oprettet med 0 besøgende som start
 			boolean check = false;
 			for (Event event : db.getEvents())
