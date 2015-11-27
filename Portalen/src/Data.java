@@ -15,7 +15,7 @@ public class Data {
 		events.add(new Event("Comedy", "Anden", "Kabaret-scenen", "08/03/2052", 30));
 		events.add(new Event("Scenekunst", "Nøddeknækkeren", "Mødelokale 1", "01/02/2005", 450));
 		events.add(new Event("Scenekunst", "Snedronningen", "Mødelokale 1", "05/06/2006", 52));
-		events.add(new Event("Børneunderholdning", "Trylleshow", "Foyersalen (Portalens Biograf)", "05/06/2053", 231));
+		events.add(new Event("Børneunderholdning", "Mystiske Mr. Mox", "Foyersalen (Portalens Biograf)", "05/06/2053", 231));
 		events.add(new Event("Børneunderholdning", "William Karberg", "Foyersalen (Portalens Biograf)", "26/02/2013", 250));
 
 //Her vises alle users og admins, hvor man ser deres usernavn (Sring) og passwords(Int)	
