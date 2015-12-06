@@ -20,12 +20,12 @@ public class Data {
 
 //Her vises alle users og admins, hvor man ser deres usernavn (Sring) og passwords(Int)	
 		users = new ArrayList<Admin>();
-		users.add(new User("a", "1", events));
+		users.add(new User("user", "user", events));
 		users.add(new User("William Karberg", "kode", events));
 		users.add(new User("Simon Ottosen", "1234", events));
 		users.add(new User("Bianca Juul-Hansen", "1234", events));
 		users.add(new User("Peter Wynn Viuff", "1234", events));
-		users.add(new Admin("b", "2"));
+		users.add(new Admin("admin", "admin"));
 
 	}
 
