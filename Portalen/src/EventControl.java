@@ -100,13 +100,12 @@ public class EventControl {
 		}
 		//Da vi har sagt at boolean er true i vores if-statement ovenover, siger vi her at den ikke må være true, hvis eventet skal oprettes
 		if (check != true){
+			//Her sætter vi så et helt nyt event hvor vi opdaterer alle de krav vi har sat i Event.java
+
 			Event add = new Event(nygenre, kunstner, nylokale, dato, visitor);
 			db.getEvents().add(add);
 			System.out.println("\nEventet er nu blevet oprettet\n-------------\n");
 		}
-		//Her sætter vi så et helt nyt event hvor vi opdaterer alle de krav vi har sat i Event.java
-	//	Event event = new Event(nygenre, kunstner, nylokale, dato, visitor);
-		//db.getEvents().add(event);
 	}
 	//Dette afsnit ændrer eventet
 	public void changeEvent() {	
