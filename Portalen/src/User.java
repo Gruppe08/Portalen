@@ -1,3 +1,8 @@
+// Prorgrammering
+// Semesterprojekt 2015
+// Ansvaret for denne klasse har tilhørt
+// Peter
+// Gruppe 08
 import java.util.ArrayList;
 
 //Her giver vi useren samme rettigheder som Admin dog har useren ikke ret til at at oprette eller slette andre usere.

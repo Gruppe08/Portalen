@@ -1,4 +1,8 @@
-
+// Prorgrammering
+// Semesterprojekt 2015
+// Ansvaret for denne klasse har tilhørt
+// Peter
+// Gruppe 08
 public class Admin {
 
 	

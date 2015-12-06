@@ -1,3 +1,8 @@
+// Prorgrammering
+// Semesterprojekt 2015
+// Ansvaret for denne klasse har tilhørt
+// William
+// Gruppe 08
 import java.util.ArrayList;
 
 public class Data {

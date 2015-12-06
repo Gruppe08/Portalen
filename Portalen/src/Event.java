@@ -1,4 +1,8 @@
-
+// Prorgrammering
+// Semesterprojekt 2015
+// Ansvaret for denne klasse har tilhørt
+// Bianca
+// Gruppe 08
 public class Event {
 
  //Her definerer vi, genre, kunstner, lokale, dato og derudover hvor mange besøgende arrangementet har.
